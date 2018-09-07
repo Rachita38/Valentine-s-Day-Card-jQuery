@@ -1,0 +1,78 @@
+<html>
+<head>
+<title> Wish Valentines Day to your Friend </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<style>
+
+audio,img
+{
+  display:none;
+}
+
+.words
+{
+    position:relative;
+    display:none;
+    top:70%;
+    left:40px;
+    color:white;
+    font-size:60px;
+    font-weight:bolder;
+}
+
+div
+{
+  position:absolute;      
+}
+    
+</style>
+</head>
+
+<body>
+<div>
+    <img src="heart.png" id="heart">
+</div>
+
+<audio controls>
+    <source src="song4.mp3" type="audio/wav">
+</audio>
+    
+ <span class="words">Wish </span><span class="words">You </span><span class="words"> A </span><span class="words"> Happy </span><span class="words"> Valentine's </span><span class="words"> Day </span>
+    
+<script>
+    
+$(document).ready(function()
+{
+    $("#heart").delay(1000).fadeIn(2000); 
+    
+    $("div").animate(
+    {
+       top:'5%',left:'30%',width:'80%',height:'60%'
+    },5000);
+    
+    /*$("div").animate(
+    {
+       top:'5%',left:'20%',width:'80%',height:'60%'
+    },5000,function(){alert("click on the Heart")});*/
+});
+    
+$("#heart").click(function()
+{
+    $('img').remove();
+    $('body').css('background-image', 'url(hearts2.png)');
+    
+    var song = document.querySelector('audio');
+    song.play();
+    
+    $("span").each(function(index) 
+    {
+        $(this).delay(400*index).fadeIn(4000);
+    });
+    
+    
+});
+</script>
+</body>
+</html>
+
